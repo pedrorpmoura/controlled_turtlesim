@@ -51,8 +51,7 @@ TimedController::TimedController(void) {
 }
 
 
-void TimedController::loop(void) {
-		
+void TimedController::loop(void) {	
 	ros::spin();	
 }	
 

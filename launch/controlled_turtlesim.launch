@@ -1,6 +1,18 @@
 <launch>
+
+	<group ns="manual_driver">
+		<node pkg="turtlesim" name="teleop_key"	type="turtle_teleop_key"/>
+		<node pkg="controlled_turtlesim" name="teleop_key_handler" type="teleop_key_handler"/>
+	</group>
+
 	<node pkg="controlled_turtlesim" name="timed_controller" type="timed_controller" output="screen">
 		<param name="time" value="10"/>
+		<remap from="/signal" to="/key_pressed"/>
+	</node>
+	
+	<node pkg="controlled_turtlesim" name="automatic_driver" type="automatic_driver">
+		<remap from="/drive" to="/start_stop"/>
 	</node>
 
+	<node pkg="turtlesim" name="turtlesim" type="turtlesim_node"/>
 </launch>
