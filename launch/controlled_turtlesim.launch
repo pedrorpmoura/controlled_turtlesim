@@ -6,7 +6,7 @@
 	</group>
 
 	<node pkg="controlled_turtlesim" name="timed_controller" type="timed_controller" output="screen">
-		<param name="time" value="10"/>
+		<param name="time" value="3"/>
 		<remap from="/signal" to="/key_pressed"/>
 	</node>
 	
