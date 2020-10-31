@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="controlled_turtlesim" name="timed_controller" type="timed_controller" output="screen">
+		<param name="time" value="10"/>
+	</node>
+
+</launch>
