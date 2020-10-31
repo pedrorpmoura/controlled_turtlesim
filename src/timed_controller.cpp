@@ -9,9 +9,6 @@ class TimedController {
 		void loop(void);
 			
 	private:
-		int timer_duration;	
-		bool timer_running;
-		
 		ros::Timer timer;
 		ros::NodeHandle nh;
 		ros::Subscriber signal_sub;
@@ -22,6 +19,7 @@ class TimedController {
 TimedController::TimedController(void) {
 	
 	// get timer duration from launch file
+	int timer_duration;
 	nh.getParam("/timed_controller/time", timer_duration);
 	
 	// setup timer
